@@ -31,7 +31,9 @@ source $DIR/helpers/locate.sh
 
 # Build our list of files, and our list of args by testing if the argument is
 # a valid path
-args=""
+# setting args to phpmd.xml which must be present to get the rules from, also exclude is hardcoded - figure out a way
+# to put this in if condition where file list is generated
+args="phpmd.xml --exclude app/AppKernel.php"
 files=()
 for arg in ${*}
 do
