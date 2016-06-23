@@ -40,6 +40,9 @@ else
     fi
 fi
 
+#only for Symfony 2 as phpunit.xml is in app/ folder. ToDo add arguments to avoid this
+phpunit_command="$phpunit_command -c app/"
+
 echo "Running command $phpunit_command"
 command_result=`eval $phpunit_command`
 if [[ $command_result =~ FAILURES ]]
