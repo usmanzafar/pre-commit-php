@@ -62,8 +62,7 @@ do
         # Using perl regex to clean up PHPMD output, trimming out full file
         # paths that are included in each line
         error_message+="  - ${txtylw}${path}${txtrst}"
-        error_message+="$(echo $OUTPUT | perl -pe "s/(\/.*?${path}:)/\n    line /gm")"
-        error_message+="\n\n"
+	error_message+="$OUTPUT\n\n"
         php_errors_found=true
     fi
 done;
